@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '../styles/RestaurantDetails.css';
 import MenuList from './MenuList';
 
 const RestaurantDetailsPage = (props) => {
   const location = useLocation();
   const { id, name, cuisine } = location.state || {};
+  const navigate = useNavigate();
 
   // const { id } = useParams();
   const [menu, setMenu] = useState({});
@@ -24,6 +26,9 @@ const RestaurantDetailsPage = (props) => {
   return (
     <>
       <div className="restaurant-details">
+        <div>
+          <button onClick={() => navigate('/')}>view Restaurants</button>
+        </div>
         <h2>{name}</h2>
         <p>Cuisine: {cuisine}</p>
         <h3>Menu</h3>

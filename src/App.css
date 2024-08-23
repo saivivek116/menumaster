@@ -25,3 +25,11 @@ input{
   margin-top: 20px;
   gap: 8px;
 }
+@media (max-width:768px){
+  .search-bar{
+    width: 80%;
+  }
+  .restaurant-list{
+    justify-content: center;
+  }
+}
